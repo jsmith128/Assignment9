@@ -1,0 +1,2 @@
+## Merge sort vs. Bubble sort
+Running the project will compare the speeds of my implementations of merge sort and bubble sort with different sizes of array. In my testing it proves that bubble sort is slightly faster on small array sizes, but merge sort is many times faster on large arrays (can be more than 1500% faster)
