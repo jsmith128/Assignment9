@@ -4,9 +4,6 @@ import java.util.Random;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        // int[] a = {1, 5, 2, 7, 1232, 0, -19, 2};
-        // a = mergeSort(a);
-        // printArr(a, "MERGED");
         System.out.println("Testing with array of length 5:");
         sortingTest(genArray(5));
 
@@ -25,7 +22,6 @@ public class App {
         System.out.println("Testing with array of length 50000:");
         sortingTest(genArray(50000));
 
-        System.out.println();
         
     }
 
@@ -34,24 +30,20 @@ public class App {
         long T_start, T_end;
         int[] arr2 = arr; // copy of arr for bubblesort to sort. Attempting to avoid conflicts
 
-
         T_start = System.nanoTime();
         mergeSort(arr);
         T_end = System.nanoTime();
-
         long T_mergeSort = (T_end - T_start);
-        System.out.println("Merge Sorting took: " + T_mergeSort/1000000.0 + " ms");
-
+        
         T_start = System.nanoTime();
         bubbleSort(arr2);
         T_end = System.nanoTime();
-
         long T_bubbleSort = (T_end - T_start);
+        
+        System.out.println("Merge Sorting took: " + T_mergeSort/1000000.0 + " ms");
         System.out.println("Bubble Sorting took: " + T_bubbleSort/1000000.0 + " ms");
-
-
+        
         double T_diff = Math.abs(T_mergeSort/1000000.0-T_bubbleSort/1000000.0);
-
 
 
         if (T_bubbleSort < T_mergeSort) {
@@ -148,14 +140,5 @@ public class App {
                 }
             }
         } while (swapped);
-    }
-
-    // Print an array
-    static void printArr(int[] arr, String prefix) {
-        System.out.println(prefix);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
     }
 }
